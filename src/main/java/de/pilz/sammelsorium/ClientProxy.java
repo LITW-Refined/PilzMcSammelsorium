@@ -1,4 +1,4 @@
-package com.myname.mymodid;
+package de.pilz.sammelsorium;
 
 public class ClientProxy extends CommonProxy {
 

@@ -1,4 +1,4 @@
-package com.myname.mymodid;
+package de.pilz.sammelsorium;
 
 import java.io.File;
 

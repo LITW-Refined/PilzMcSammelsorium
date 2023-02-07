@@ -1,4 +1,4 @@
-package com.myname.mymodid;
+package de.pilz.sammelsorium;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
