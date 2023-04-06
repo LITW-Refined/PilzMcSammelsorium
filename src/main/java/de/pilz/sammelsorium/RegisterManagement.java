@@ -2,7 +2,7 @@ package de.pilz.sammelsorium;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
-
+import net.minecraft.item.ItemBlock;
 import cpw.mods.fml.common.registry.GameRegistry;
 import de.pilz.sammelsorium.blocks.*;
 import de.pilz.sammelsorium.items.ItemCropsRedstone;
@@ -26,6 +26,6 @@ public class RegisterManagement {
 
     public static void RegisterAllBlocks() {
         GameRegistry.registerBlock(blockSeaLantern, ItemBlockSeaLantern.class, BlockNames.SEA_LANTERN);
-        GameRegistry.registerBlock(blockCropsRedstone, ItemBlockCropsRedstone.class, BlockNames.CROPS_REDSTONE);
+        GameRegistry.registerBlock(blockCropsRedstone, ItemBlock.class, BlockNames.CROPS_REDSTONE);
     }
 }
