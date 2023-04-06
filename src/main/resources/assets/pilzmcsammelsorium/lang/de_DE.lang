@@ -1,6 +1,10 @@
-item.meCableBase.name=ME-Kabelfasern
-item.prismarineCrystal.name=Prismarinkristall
-item.prismarineCrystalRaw.name=Prismarinrohkristall
-item.prismarineShard.name=Prismarinscherbe
+item.itemPrismarineCrystal.name=Prismarinkristall
+item.itemPrismarineCrystalRaw.name=Prismarinrohkristall
+item.itemPrismarineShard.name=Prismarinscherbe
+
 tile.blockSeaLantern.name=Sea Lantern
 tile.blockSeaLanternRed.name=Sea Lantern (Rot)
+
+item.itemCropsRedstone.name=Redstone-Samen
+item.itemFlowersRedstone.name=Redstone-Blume
+tile.blockCropRedstone.name=Redstone-Saat

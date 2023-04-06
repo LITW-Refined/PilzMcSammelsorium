@@ -1,6 +1,10 @@
-item.pilzmcsammelsorium.itemMeCableBase.name=ME Cable Fiber
-item.pilzmcsammelsorium.itemPrismarineCrystal.name=Prismarine Crystal
-item.pilzmcsammelsorium.itemPrismarineCrystalRaw.name=Prismarine Raw Crystal
-item.pilzmcsammelsorium.itemPrismarineShard.name=Prismarine Shard
+item.itemPrismarineCrystal.name=Prismarine Crystal
+item.itemPrismarineCrystalRaw.name=Prismarine Raw Crystal
+item.itemPrismarineShard.name=Prismarine Shard
+
 tile.blockSeaLantern.name=Sea Lantern
 tile.blockSeaLanternRed.name=Sea Lantern (Red)
+
+item.itemCropsRedstone.name=Redstone Seed
+item.itemFlowersRedstone.name=Redstone Flower
+tile.blockCropRedstone.name=Redstone Crop

@@ -12,6 +12,7 @@ import net.minecraft.util.IIcon;
 
 import de.pilz.sammelsorium.enums.EnumSeaLanternVariation;
 import de.pilz.sammelsorium.strings.BlockNames;
+import de.pilz.sammelsorium.strings.OtherStrings;
 
 public class BlockSeaLantern extends Block {
 
@@ -40,7 +41,7 @@ public class BlockSeaLantern extends Block {
         myIcons = new IIcon[EnumSeaLanternVariation.count()];
 
         for (EnumSeaLanternVariation variation : EnumSeaLanternVariation.values()) {
-            myIcons[variation.getMeta()] = reg.registerIcon("pilzmcsammelsorium:" + variation.getName());
+            myIcons[variation.getMeta()] = reg.registerIcon(OtherStrings.MOD_PREFIX + variation.getName());
         }
     }
 
