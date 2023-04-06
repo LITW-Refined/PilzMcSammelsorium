@@ -26,6 +26,6 @@ public class RegisterManagement {
 
     public static void RegisterAllBlocks() {
         GameRegistry.registerBlock(blockSeaLantern, ItemBlockSeaLantern.class, BlockNames.SEA_LANTERN);
-        GameRegistry.registerBlock(blockCropsRedstone, ItemBlockSeaLantern.class, BlockNames.CROPS_REDSTONE);
+        GameRegistry.registerBlock(blockCropsRedstone, ItemBlockCropsRedstone.class, BlockNames.CROPS_REDSTONE);
     }
 }
