@@ -1,13 +1,14 @@
 package de.pilz.sammelsorium.items;
 
-import de.pilz.sammelsorium.strings.ItemNames;
-import de.pilz.sammelsorium.strings.OtherStrings;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
+import de.pilz.sammelsorium.strings.ItemNames;
+import de.pilz.sammelsorium.strings.OtherStrings;
+
 public class ItemFlowersRedstone extends Item {
-    
+
     public ItemFlowersRedstone() {
         super();
         this.setMaxDamage(0);

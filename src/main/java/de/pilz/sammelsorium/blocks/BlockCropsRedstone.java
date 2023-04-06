@@ -1,13 +1,13 @@
 package de.pilz.sammelsorium.blocks;
 
+import java.util.Random;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.util.IIcon;
-
-import java.util.Random;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -62,13 +62,13 @@ public class BlockCropsRedstone extends BlockCrops {
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister iconRegister)
-    {
-          myIcons = new IIcon[8];
+    public void registerBlockIcons(IIconRegister iconRegister) {
+        myIcons = new IIcon[8];
 
-          for (int i = 0; i < myIcons.length; i++) {
-            int stage = (int)(i / 2);
-            myIcons[i] = iconRegister.registerIcon(OtherStrings.MOD_PREFIX + BlockNames.CROPS_REDSTONE + OtherStrings.STAGE_POSTFIX + stage);
-          }
+        for (int i = 0; i < myIcons.length; i++) {
+            int stage = (int) (i / 2);
+            myIcons[i] = iconRegister.registerIcon(
+                    OtherStrings.MOD_PREFIX + BlockNames.CROPS_REDSTONE + OtherStrings.STAGE_POSTFIX + stage);
+        }
     }
 }
