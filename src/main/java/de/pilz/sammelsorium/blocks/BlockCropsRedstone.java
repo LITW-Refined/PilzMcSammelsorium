@@ -71,4 +71,16 @@ public class BlockCropsRedstone extends BlockCrops {
                     OtherStrings.MOD_PREFIX + BlockNames.CROPS_REDSTONE + OtherStrings.STAGE_POSTFIX + stage);
         }
     }
+
+    @Override
+    protected Item func_149866_i()
+    {
+        return RegisterManagement.itemFlowerRedstone;
+    }
+
+    @Override
+    protected Item func_149865_P()
+    {
+        return RegisterManagement.itemFlowerRedstone;
+    }
 }
