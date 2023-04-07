@@ -1,7 +1,6 @@
 package de.pilz.sammelsorium.items;
 
 import net.minecraft.block.Block;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -11,6 +10,7 @@ import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.util.ForgeDirection;
 
+import de.pilz.sammelsorium.CreativeTabsManagement;
 import de.pilz.sammelsorium.RegisterManagement;
 import de.pilz.sammelsorium.strings.ItemNames;
 import de.pilz.sammelsorium.strings.OtherStrings;
@@ -20,7 +20,7 @@ public class ItemCropsRedstone extends Item implements IPlantable {
     public ItemCropsRedstone() {
         super();
         setTextureName(OtherStrings.MOD_PREFIX + ItemNames.CROPS_REDSTONE);
-        setCreativeTab(CreativeTabs.tabRedstone);
+        setCreativeTab(CreativeTabsManagement.generalTab);
     }
 
     @Override

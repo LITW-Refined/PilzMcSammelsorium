@@ -5,6 +5,7 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
 import de.pilz.sammelsorium.enums.EnumSeaLanternVariation;
+import de.pilz.sammelsorium.strings.OtherStrings;
 
 public class ItemBlockSeaLantern extends ItemBlock {
 
@@ -22,6 +23,6 @@ public class ItemBlockSeaLantern extends ItemBlock {
     @Override
     public String getUnlocalizedName(ItemStack stack) {
         var variation = EnumSeaLanternVariation.values()[stack.getItemDamage()];
-        return "tile." + variation.getName();
+        return OtherStrings.TILE_PREFIX + variation.getName();
     }
 }

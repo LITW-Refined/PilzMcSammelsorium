@@ -23,4 +23,8 @@ public enum EnumPrismarineItem {
     public String getName() {
         return name;
     }
+
+    public static int count() {
+        return values().length;
+    }
 }

@@ -10,6 +10,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 
+import de.pilz.sammelsorium.CreativeTabsManagement;
 import de.pilz.sammelsorium.enums.EnumSeaLanternVariation;
 import de.pilz.sammelsorium.strings.BlockNames;
 import de.pilz.sammelsorium.strings.OtherStrings;
@@ -22,6 +23,7 @@ public class BlockSeaLantern extends Block {
         super(Material.glass);
         this.setBlockName(BlockNames.SEA_LANTERN);
         this.setStepSound(soundTypeGlass);
+        this.setCreativeTab(CreativeTabsManagement.generalTab);
     }
 
     @Override

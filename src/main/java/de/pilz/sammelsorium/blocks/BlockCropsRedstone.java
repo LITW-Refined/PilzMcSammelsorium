@@ -73,14 +73,12 @@ public class BlockCropsRedstone extends BlockCrops {
     }
 
     @Override
-    protected Item func_149866_i()
-    {
+    protected Item func_149866_i() {
         return RegisterManagement.itemFlowerRedstone;
     }
 
     @Override
-    protected Item func_149865_P()
-    {
+    protected Item func_149865_P() {
         return RegisterManagement.itemFlowerRedstone;
     }
 }
