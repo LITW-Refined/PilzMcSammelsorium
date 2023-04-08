@@ -23,16 +23,12 @@ public class MyMod {
     // GameRegistry." (Remove if not needed)
     public void preInit(FMLPreInitializationEvent event) {
         proxy.preInit(event);
-        RegisterManagement.RegisterAllItems();
-        RegisterManagement.RegisterAllBlocks();
-        OreDictionaryManagement.RegisterOres();
     }
 
     @Mod.EventHandler
     // load "Do your mod setup. Build whatever data structures you care about. Register recipes." (Remove if not needed)
     public void init(FMLInitializationEvent event) {
         proxy.init(event);
-        RecipesManagement.RegisterAllRecipes();
     }
 
     @Mod.EventHandler

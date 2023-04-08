@@ -26,13 +26,21 @@ public class RegisterManagement {
     public static ItemStack itemStackPrismarineCrystalRaw = new ItemStack(itemPrismarine, 1, 2);
 
     public static void RegisterAllItems() {
-        GameRegistry.registerItem(itemCropsRedstone, ItemNames.CROPS_REDSTONE);
-        GameRegistry.registerItem(itemFlowerRedstone, ItemNames.FLOWERS_REDSTONE);
-        GameRegistry.registerItem(itemPrismarine, ItemNames.PRISMARINE_SHARD);
+        if (Config.enablePrismarine) {
+            GameRegistry.registerItem(itemPrismarine, ItemNames.PRISMARINE_SHARD);
+        }
+        if (Config.enableGlowFlower) {
+            GameRegistry.registerItem(itemCropsRedstone, ItemNames.CROPS_REDSTONE);
+            GameRegistry.registerItem(itemFlowerRedstone, ItemNames.FLOWERS_REDSTONE);
+        }
     }
 
     public static void RegisterAllBlocks() {
-        GameRegistry.registerBlock(blockSeaLantern, ItemBlockSeaLantern.class, BlockNames.SEA_LANTERN);
-        GameRegistry.registerBlock(blockCropsRedstone, ItemBlock.class, BlockNames.CROPS_REDSTONE);
+        if (Config.enablePrismarine) {
+            GameRegistry.registerBlock(blockSeaLantern, ItemBlockSeaLantern.class, BlockNames.SEA_LANTERN);
+        }
+        if (Config.enableGlowFlower) {
+            GameRegistry.registerBlock(blockCropsRedstone, ItemBlock.class, BlockNames.CROPS_REDSTONE);
+        }
     }
 }

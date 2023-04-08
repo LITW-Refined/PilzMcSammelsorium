@@ -6,12 +6,28 @@ import net.minecraftforge.common.config.Configuration;
 
 public class Config {
 
-    public static String greeting = "Hello World";
+    public static Boolean disableAllRecipes = false;
+    public static Boolean enablePrismarine = true;
+    public static Boolean enableGlowFlower = true;
 
     public static void synchronizeConfiguration(File configFile) {
         Configuration configuration = new Configuration(configFile);
 
-        greeting = configuration.getString("greeting", Configuration.CATEGORY_GENERAL, greeting, "How shall I greet?");
+        disableAllRecipes = configuration.getBoolean(
+                "disableAllRecipes",
+                Configuration.CATEGORY_GENERAL,
+                disableAllRecipes,
+                "Disables all recipes if true. Useful for making custom recipes.");
+        enablePrismarine = configuration.getBoolean(
+                "enablePrismarine",
+                Configuration.CATEGORY_GENERAL,
+                enablePrismarine,
+                "Enables the Prismarine Shards, Raw Crystals and Crystals.");
+        enableGlowFlower = configuration.getBoolean(
+                "enableGlowFlower",
+                Configuration.CATEGORY_GENERAL,
+                enableGlowFlower,
+                "Enables the Glow Flower and Seeds.");
 
         if (configuration.hasChanged()) {
             configuration.save();

@@ -12,13 +12,24 @@ public class CommonProxy {
     public void preInit(FMLPreInitializationEvent event) {
         Config.synchronizeConfiguration(event.getSuggestedConfigurationFile());
 
-        MyMod.LOG.info(Config.greeting);
         MyMod.LOG.info("I am " + Tags.MODNAME + " at version " + Tags.VERSION);
+
+        MyMod.LOG.info("Registering items ...");
+        RegisterManagement.RegisterAllItems();
+
+        MyMod.LOG.info("Registering blocks ...");
+        RegisterManagement.RegisterAllBlocks();
+
+        MyMod.LOG.info("Registering ores ...");
+        OreDictionaryManagement.RegisterOres();
     }
 
     // load "Do your mod setup. Build whatever data structures you care about. Register recipes." (Remove if not needed)
     public void init(FMLInitializationEvent event) {
-        CreativeTabsManagement.RegisterNames();
+        if (!Config.disableAllRecipes) {
+            MyMod.LOG.info("Registering recipes...");
+            RecipesManagement.RegisterAllRecipes();
+        }
     }
 
     // postInit "Handle interaction with other mods, complete your setup based on this." (Remove if not needed)
