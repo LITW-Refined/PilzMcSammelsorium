@@ -32,6 +32,7 @@ public class BlockSeaLantern extends Block {
     }
 
     @Override
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public void getSubBlocks(Item item, CreativeTabs tab, List list) {
         for (EnumSeaLanternVariation pt : EnumSeaLanternVariation.values()) {
             list.add(new ItemStack(item, 1, pt.getMeta()));

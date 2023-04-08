@@ -35,6 +35,7 @@ public class ItemPrismarine extends Item {
     }
 
     @Override
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public void getSubItems(Item item, CreativeTabs tab, List list) {
         for (EnumPrismarineItem pt : EnumPrismarineItem.values()) {
             list.add(new ItemStack(item, 1, pt.getMeta()));
