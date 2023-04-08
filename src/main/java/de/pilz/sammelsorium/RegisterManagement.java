@@ -21,9 +21,9 @@ public class RegisterManagement {
     public static Item itemFlowerRedstone = new ItemFlowersRedstone();
 
     public static Item itemPrismarine = new ItemPrismarine();
-    public static ItemStack itemStackPrismarineShard = new ItemStack(itemPrismarine, 0, 0);
-    public static ItemStack itemStackPrismarineCrystal = new ItemStack(itemPrismarine, 1, 0);
-    public static ItemStack itemStackPrismarineCrystalRaw = new ItemStack(itemPrismarine, 2, 0);
+    public static ItemStack itemStackPrismarineShard = new ItemStack(itemPrismarine, 1, 0);
+    public static ItemStack itemStackPrismarineCrystal = new ItemStack(itemPrismarine, 1, 1);
+    public static ItemStack itemStackPrismarineCrystalRaw = new ItemStack(itemPrismarine, 1, 2);
 
     public static void RegisterAllItems() {
         GameRegistry.registerItem(itemCropsRedstone, ItemNames.CROPS_REDSTONE);

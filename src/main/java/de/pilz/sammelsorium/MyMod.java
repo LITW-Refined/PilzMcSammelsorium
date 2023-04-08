@@ -25,6 +25,7 @@ public class MyMod {
         proxy.preInit(event);
         RegisterManagement.RegisterAllItems();
         RegisterManagement.RegisterAllBlocks();
+        OreDictionaryManagement.RegisterOres();
     }
 
     @Mod.EventHandler
