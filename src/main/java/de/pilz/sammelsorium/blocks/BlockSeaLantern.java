@@ -24,6 +24,7 @@ public class BlockSeaLantern extends Block {
         this.setBlockName(BlockNames.SEA_LANTERN);
         this.setStepSound(soundTypeGlass);
         this.setCreativeTab(CreativeTabsManagement.generalTab);
+        this.setLightLevel(1.0F);
     }
 
     @Override

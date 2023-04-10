@@ -8,7 +8,6 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.util.IIcon;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import de.pilz.sammelsorium.RegisterManagement;
@@ -21,8 +20,17 @@ public class BlockCropsRedstone extends BlockCrops {
     private IIcon[] myIcons;
 
     public BlockCropsRedstone() {
+        super();
         setBlockName(BlockNames.CROPS_REDSTONE);
+        this.setLightLevel(0.067F * 5);
+        this.setLightOpacity(10);
+        
     }
+
+    // @Override
+    // public int getLightValue() {
+    //     return 5;
+    // }
 
     /**
      * is the block grass, dirt or farmland
