@@ -62,7 +62,7 @@ public class RecipesManagement {
 
         // G l o w   F l o w e r
 
-        if (Config.enableGlowFlower) {
+        if (Config.enableDecoBlocksAndItems) {
                 // Redstone Flower -> Dust
                 GameRegistry.addShapelessRecipe(
                         new ItemStack(Items.redstone, 4, 0),

@@ -18,7 +18,7 @@ public class OreDictionaryManagement {
             OreDictionary.registerOre(ORE_CRYSTAL_PRISMARINE_RAW, RegisterManagement.itemStackPrismarineCrystalRaw);
             OreDictionary.registerOre(ORE_CRYSTAL_PRISMARINE, RegisterManagement.itemStackPrismarineCrystal);
         }
-        if (Config.enableGlowFlower) {
+        if (Config.enableDecoBlocksAndItems) {
             OreDictionary.registerOre(ORE_LIST_ALLSEED, RegisterManagement.itemCropsRedstone);
         }
     }

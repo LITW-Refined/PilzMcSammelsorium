@@ -16,6 +16,7 @@ public class RegisterManagement {
 
     public static Block blockSeaLantern = new BlockSeaLantern();
     public static Block blockCropsRedstone = new BlockCropsRedstone();
+    public static Block blockCropsRedstoneDeco = new BlockCropsRedstoneDeco();
 
     public static Item itemCropsRedstone = new ItemCropsRedstone();
     public static Item itemFlowerRedstone = new ItemFlowersRedstone();
@@ -29,7 +30,7 @@ public class RegisterManagement {
         if (Config.enablePrismarine) {
             GameRegistry.registerItem(itemPrismarine, ItemNames.PRISMARINE_SHARD);
         }
-        if (Config.enableGlowFlower) {
+        if (Config.enableRedstoneFlower) {
             GameRegistry.registerItem(itemCropsRedstone, ItemNames.CROPS_REDSTONE);
             GameRegistry.registerItem(itemFlowerRedstone, ItemNames.FLOWERS_REDSTONE);
         }
@@ -39,8 +40,11 @@ public class RegisterManagement {
         if (Config.enablePrismarine) {
             GameRegistry.registerBlock(blockSeaLantern, ItemBlockSeaLantern.class, BlockNames.SEA_LANTERN);
         }
-        if (Config.enableGlowFlower) {
+        if (Config.enableRedstoneFlower) {
             GameRegistry.registerBlock(blockCropsRedstone, ItemBlock.class, BlockNames.CROPS_REDSTONE);
+            if (Config.enableDecoBlocksAndItems) {
+                GameRegistry.registerBlock(blockCropsRedstoneDeco, ItemBlock.class, BlockNames.CROPS_REDSTONE_DECO);
+            }
         }
     }
 }

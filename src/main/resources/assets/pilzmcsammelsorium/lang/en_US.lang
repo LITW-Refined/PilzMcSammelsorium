@@ -8,3 +8,4 @@ tile.blockSeaLanternRed.name=Sea Lantern (Red)
 item.itemCropsRedstone.name=Redstone Seed
 item.itemFlowersRedstone.name=Redstone Flower
 tile.blockCropRedstone.name=Redstone Crop
+tile.blockCropRedstoneDeco.name=Redstone Crop (Deco)
