@@ -9,3 +9,5 @@ item.itemCropsRedstone.name=Redstone Seed
 item.itemFlowersRedstone.name=Redstone Flower
 tile.blockCropRedstone.name=Redstone Crop
 tile.blockCropRedstoneDeco.name=Redstone Crop (Deco)
+
+notation_decoElement=This is just for decoration without any real funcationality.

@@ -9,3 +9,5 @@ item.itemCropsRedstone.name=Redstone-Samen
 item.itemFlowersRedstone.name=Redstone-Blume
 tile.blockCropRedstone.name=Redstone-Saat
 tile.blockCropRedstoneDeco.name=Redstone-Saat (Deko)
+
+notation_decoElement=Dies ist nur zur Dekoration und erfüllt keinen wirklichen Nutzen.

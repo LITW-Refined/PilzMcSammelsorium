@@ -43,7 +43,7 @@ public class RegisterManagement {
         if (Config.enableRedstoneFlower) {
             GameRegistry.registerBlock(blockCropsRedstone, ItemBlock.class, BlockNames.CROPS_REDSTONE);
             if (Config.enableDecoBlocksAndItems) {
-                GameRegistry.registerBlock(blockCropsRedstoneDeco, ItemBlock.class, BlockNames.CROPS_REDSTONE_DECO);
+                GameRegistry.registerBlock(blockCropsRedstoneDeco, ItemBlockDeco.class, BlockNames.CROPS_REDSTONE_DECO);
             }
         }
     }
