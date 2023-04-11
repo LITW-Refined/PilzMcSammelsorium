@@ -80,16 +80,22 @@ public class RecipesManagement {
                                 RegisterManagement.itemFlowerRedstone
                         });
                 
-                if (Config.enableDecoBlocksAndItems) {
-                        GameRegistry.addRecipe(new ShapelessOreRecipe(
-                                new ItemStack(RegisterManagement.blockCropsRedstoneDeco, 2, 0),
-                                new Object[] {
-                                        OreDictionaryManagement.ORE_ITEM_CLAY,
-                                        OreDictionaryManagement.ORE_ITEM_CLAY,
-                                        Items.wheat_seeds,
-                                        OreDictionaryManagement.ORE_DYE_RED
-                                }));
-                }
+                // Redstone Crops (Deco)
+                addDecoRecipe(new ItemStack(RegisterManagement.blockCropsRedstoneDeco, 2, 0),
+                        Items.wheat_seeds, OreDictionaryManagement.ORE_DYE_RED);
+        }
+    }
+
+    private static void addDecoRecipe(ItemStack output, Object keyItem1, Object keyItem2) {
+        if (Config.enableDecoBlocksAndItems) {
+                GameRegistry.addRecipe(new ShapelessOreRecipe(
+                        output,
+                        new Object[] {
+                                OreDictionaryManagement.ORE_ITEM_CLAY,
+                                OreDictionaryManagement.ORE_ITEM_CLAY,
+                                keyItem1,
+                                keyItem2
+                        }));
         }
     }
 }
