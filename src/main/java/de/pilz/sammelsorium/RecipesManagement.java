@@ -79,6 +79,17 @@ public class RecipesManagement {
                                 RegisterManagement.itemFlowerRedstone,
                                 RegisterManagement.itemFlowerRedstone
                         });
+                
+                if (Config.enableDecoBlocksAndItems) {
+                        GameRegistry.addRecipe(new ShapelessOreRecipe(
+                                new ItemStack(RegisterManagement.blockCropsRedstoneDeco, 2, 0),
+                                new Object[] {
+                                        OreDictionaryManagement.ORE_ITEM_CLAY,
+                                        OreDictionaryManagement.ORE_ITEM_CLAY,
+                                        Items.wheat_seeds,
+                                        OreDictionaryManagement.ORE_DYE_RED
+                                }));
+                }
         }
     }
 }
