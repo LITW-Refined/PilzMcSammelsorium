@@ -22,7 +22,8 @@ public class EventHandlers {
 
     @SubscribeEvent
     public void onChunkForce(ForceChunkEvent event) {
-        if (Config.disableChunkLoadingOnRequest && Config.autoLoadChunksOnTicketCreation && !event.ticket.world.isRemote) {
+        if (Config.disableChunkLoadingOnRequest && Config.autoLoadChunksOnTicketCreation
+                && !event.ticket.world.isRemote) {
             if (event.ticket.world instanceof WorldServer) {
                 ((WorldServer) event.ticket.world).getChunkProvider()
                         .loadChunk(event.location.chunkXPos, event.location.chunkZPos);
