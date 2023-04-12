@@ -1,12 +1,13 @@
 package de.pilz.sammelsorium;
 
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.ChunkProviderServer;
 import net.minecraftforge.event.world.WorldEvent;
 
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+
 public class EventHandlers {
-    
+
     @SubscribeEvent
     public void onWorldLoad(WorldEvent.Load event) {
         if (Config.disableChunkLoadingOnRequest && !event.world.isRemote) {
