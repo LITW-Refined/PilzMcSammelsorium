@@ -6,10 +6,13 @@ import net.minecraftforge.common.config.Configuration;
 
 public class Config {
 
+    private static final String CATEGORY_EXPERIMENTAL = "experimental";
+
     public static Boolean disableAllRecipes = false;
     public static Boolean enablePrismarine = true;
     public static Boolean enableRedstoneFlower = true;
     public static Boolean enableDecoBlocksAndItems = false;
+    public static Boolean disableChunkLoadingOnRequest = false;
 
     public static void synchronizeConfiguration(File configFile) {
         Configuration configuration = new Configuration(configFile);
@@ -34,6 +37,11 @@ public class Config {
                 Configuration.CATEGORY_GENERAL,
                 enableDecoBlocksAndItems,
                 "Enables all decoration variants of supported blocks and items. Useful for creating quests and custom NPCs.");
+        disableChunkLoadingOnRequest = configuration.getBoolean(
+                "disableChunkLoadingOnRequest",
+                CATEGORY_EXPERIMENTAL,
+                disableChunkLoadingOnRequest,
+                "Disables the option \"loadChunkOnProvideRequest \" on server to not load chunks whenever they are maybe requested. This is very experimental.");
 
         if (configuration.hasChanged()) {
             configuration.save();

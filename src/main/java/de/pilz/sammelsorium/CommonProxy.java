@@ -4,6 +4,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
+import net.minecraftforge.common.MinecraftForge;
 
 public class CommonProxy {
 
@@ -30,6 +31,8 @@ public class CommonProxy {
             MyMod.LOG.info("Registering recipes...");
             RecipesManagement.RegisterAllRecipes();
         }
+
+        MinecraftForge.EVENT_BUS.register(new EventHandlers());
     }
 
     // postInit "Handle interaction with other mods, complete your setup based on this." (Remove if not needed)
