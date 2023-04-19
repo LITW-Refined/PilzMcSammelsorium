@@ -20,8 +20,8 @@ public class BlockCropsRedstoneDeco extends BlockCrops {
     public BlockCropsRedstoneDeco() {
         super();
         setBlockName(BlockNames.CROPS_REDSTONE_DECO);
-        this.setLightLevel(0.067F * 5);
-        this.setLightOpacity(10);
+        this.setLightLevel(1 / 15 * 10);
+        this.setLightOpacity(0);
 
         if (this.getClass() == BlockCropsRedstoneDeco.class) {
             this.setCreativeTab(CreativeTabsManagement.generalTab);
