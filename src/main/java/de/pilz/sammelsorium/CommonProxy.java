@@ -33,6 +33,9 @@ public class CommonProxy {
             RecipesManagement.RegisterAllRecipes();
         }
 
+        MyMod.LOG.info("Searching blocks and items from other Mods ...");
+        ModManagement.findModItems();
+
         MinecraftForge.EVENT_BUS.register(new EventHandlers());
     }
 

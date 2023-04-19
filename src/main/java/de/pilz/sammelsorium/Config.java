@@ -7,6 +7,7 @@ import net.minecraftforge.common.config.Configuration;
 public class Config {
 
     private static final String CATEGORY_EXPERIMENTAL = "experimental";
+    private static final String CATEGORY_MOD_INTEGRATION = "mod_integration";
 
     public static Boolean disableAllRecipes = false;
     public static Boolean enablePrismarine = true;
@@ -14,6 +15,7 @@ public class Config {
     public static Boolean enableDecoBlocksAndItems = false;
     public static Boolean disableChunkLoadingOnRequest = false;
     public static Boolean autoLoadChunksOnTicketCreation = true;
+    public static Boolean searchForModBlocksAndItems = true;
 
     public static void synchronizeConfiguration(File configFile) {
         Configuration configuration = new Configuration(configFile);
@@ -48,7 +50,13 @@ public class Config {
                 CATEGORY_EXPERIMENTAL,
                 autoLoadChunksOnTicketCreation,
                 "When \"disableChunkLoadingOnRequest\" is true then this option helps that chunk load tickets continue to load the target chunk automatically. Otherwise such tickets are useless and chunkloaders too. You may want to disable this if your Chunkloader mod can that too (probably not).");
+        searchForModBlocksAndItems = configuration.getBoolean(
+                "searchForModBlocksAndItems",
+                CATEGORY_MOD_INTEGRATION,
+                searchForModBlocksAndItems,
+                "If disabled, the most mod integrations will not work. Only disable, if you announce an error while that get fixed when off.");
 
+                
         if (configuration.hasChanged()) {
             configuration.save();
         }
