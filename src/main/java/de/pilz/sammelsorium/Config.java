@@ -56,7 +56,6 @@ public class Config {
                 searchForModBlocksAndItems,
                 "If disabled, the most mod integrations will not work. Only disable, if you announce an error while that get fixed when off.");
 
-                
         if (configuration.hasChanged()) {
             configuration.save();
         }
