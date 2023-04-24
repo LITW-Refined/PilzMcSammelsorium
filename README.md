@@ -1,6 +1,10 @@
 # PilzMcSammelsorium
 Minecraft Mod for my 1.7.10 Modpack that adds some extra blocks, items and features.
 
+# Contribution
+
+Fell free to contribue anything here. My time is limited and I only add what I really need. World generation for example would be really nice, but I don't really need it. Other ores flower or any other blocks.
+
 # Configuration
 
 Feel free and take a look into the `pilzmcsammelsorium.cfg` file in the `config` directory.
@@ -9,10 +13,6 @@ Feel free and take a look into the `pilzmcsammelsorium.cfg` file in the `config`
 - Recips can be turned off completely.
 - All blocks or items can be turned on or off.
 - Each other feature can be turned on or off.
-
-# Contribution
-
-Fell free to contribue anything here. My time is limited and I only add what I really need. World generation for example would be really nice, but I don't really need it. Other ores flower or any other blocks.
 
 # Features
 
