@@ -28,9 +28,9 @@ The Sea lanterns from later Minecraft Versions has been added. They get not gene
   - Sea Lantern (Red)
   - *there may be other color variations or may be added in the future*
 - Items
- - Prismarine Shard
- - Prismarine Crystal (Raw)
- - Prismarine Crystal
+  - Prismarine Shard
+  - Prismarine Crystal (Raw)
+  - Prismarine Crystal
   
 ## Crops
 
@@ -50,4 +50,15 @@ I'm using this for an NPC that has a little field of Redstone Flowers. The NPC w
 
 ### Disable chunk Loading on request
 
-Two experimental options for loading chunks on request has been added. This can be used to prevent Mods (and core Minecraft itself) from loading chunks whenever a block is requested there. This also means "ghost loading" or "cascade loading" chunks. Can help with performance, but only turn on this option if you really know what you do!
+Two experimental options for loading chunks on request has been added.
+This can be used to prevent Mods (and core Minecraft itself) from loading chunks whenever a block is requested there. This also means "ghost loading" or "cascade loading" chunks.
+Can help with performance, but only turn on this option if you really know what you do!
+
+Basically for a Mod, if it needs a Block at Position XYZ, it calls `getBlock()` or `getTileEntity()` or `getEntity`. By default, this methods will load the chunk where the block or entity is loaced in. Often this is not expected and in some cases can cause lags. G.g. AE2 or Ender IO Conduits or any other multiblock structure can be a cause for such a behavior. Even Minecraft's Grass block that wants to extend its Gradd to nearby dirt blocks.
+There is one configruation field in the `WorldServer` object called `loadChunkOnProvideRequest` that is true by default. Setting this to false only loads chunks when explicitely loaded via e.g. `loadChunk(x, y, z)`.
+
+If enabled, ensure to check all your chunk loaders for functionality.
+Think about switching to my Fork of Chicken Chunks. I added a fix to load the chunk before requesting the block.
+
+Also set `disableChunkLoadingOnRequest` to `true` if you don't know what you do!
+This continues functionality of chunk loading tickers. So anytime whenever a chunk loading ticket is created by a Mod, the chunks will be also loaded (Forge itself doesn't that automatically).
