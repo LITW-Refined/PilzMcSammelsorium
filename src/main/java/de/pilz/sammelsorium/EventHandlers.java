@@ -25,8 +25,10 @@ public class EventHandlers {
         if (Config.disableChunkLoadingOnRequest && Config.autoLoadChunksOnTicketCreation
                 && !event.ticket.world.isRemote) {
             if (event.ticket.world instanceof WorldServer) {
-                ((WorldServer) event.ticket.world).getChunkProvider()
-                        .loadChunk(event.location.chunkXPos, event.location.chunkZPos);
+                IChunkProvider provider = ((WorldServer) event.ticket.world).getChunkProvider();
+                if (!provider.chunkExists(event.location.chunkXPos, event.location.chunkZPos)) {
+                    provider.loadChunk(event.location.chunkXPos, event.location.chunkZPos);
+                }
             }
         }
     }
