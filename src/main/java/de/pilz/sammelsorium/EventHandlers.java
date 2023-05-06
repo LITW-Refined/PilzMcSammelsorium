@@ -1,14 +1,22 @@
 package de.pilz.sammelsorium;
 
+import java.util.HashMap;
+
+import net.minecraft.world.ChunkCoordIntPair;
 import net.minecraft.world.WorldServer;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.ChunkProviderServer;
 import net.minecraftforge.common.ForgeChunkManager.ForceChunkEvent;
+import net.minecraftforge.common.ForgeChunkManager.UnforceChunkEvent;
 import net.minecraftforge.event.world.WorldEvent;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.gameevent.TickEvent.WorldTickEvent;
+import cpw.mods.fml.relauncher.Side;
 
 public class EventHandlers {
+
+    private HashMap<WorldServer, HashMap<ChunkCoordIntPair, Integer>> pendingForcedChunks = new HashMap<>();
 
     @SubscribeEvent
     public void onWorldLoad(WorldEvent.Load event) {
@@ -25,11 +33,52 @@ public class EventHandlers {
         if (Config.disableChunkLoadingOnRequest && Config.autoLoadChunksOnTicketCreation
                 && !event.ticket.world.isRemote) {
             if (event.ticket.world instanceof WorldServer) {
-                IChunkProvider provider = ((WorldServer) event.ticket.world).getChunkProvider();
-                if (!provider.chunkExists(event.location.chunkXPos, event.location.chunkZPos)) {
-                    provider.loadChunk(event.location.chunkXPos, event.location.chunkZPos);
+                // Do not load the chunk instantly to prevent colidation with sync chunk loading and chunkloaders that
+                // creates a ticket while loading the chunk.
+                var coordMap = getPendingForcedChunksForWorld((WorldServer) event.ticket.world);
+                if (!coordMap.containsKey(event.location)) {
+                    coordMap.put(event.location, 0);
                 }
             }
         }
+    }
+
+    @SubscribeEvent
+    public void onChunkUnforce(UnforceChunkEvent event) {
+        var coordMap = getPendingForcedChunksForWorld((WorldServer) event.ticket.world);
+        if (coordMap.containsKey(event.location)) {
+            coordMap.remove(event.location);
+        }
+    }
+
+    @SubscribeEvent
+    public void onWorldTick(WorldTickEvent event) {
+        if (Config.disableChunkLoadingOnRequest && Config.autoLoadChunksOnTicketCreation
+                && event.side == Side.SERVER
+                && event.world instanceof WorldServer) {
+            var coordMap = getPendingForcedChunksForWorld((WorldServer) event.world);
+
+            for (ChunkCoordIntPair coords : coordMap.keySet()) {
+                Integer ticksWaited = coordMap.get(coords);
+
+                // Wait at least one second (= 20 ticks) before loading forced chunks.
+                if (ticksWaited == 20) {
+                    IChunkProvider provider = ((WorldServer) event.world).getChunkProvider();
+                    if (!provider.chunkExists(coords.chunkXPos, coords.chunkZPos)) {
+                        provider.loadChunk(coords.chunkXPos, coords.chunkZPos);
+                    }
+                    coordMap.remove(coords);
+                } else {
+                    coordMap.put(coords, ticksWaited + 1);
+                }
+            }
+        }
+    }
+
+    private HashMap<ChunkCoordIntPair, Integer> getPendingForcedChunksForWorld(WorldServer world) {
+        if (!pendingForcedChunks.containsKey(world)) {
+            pendingForcedChunks.put(world, new HashMap<>());
+        }
+        return pendingForcedChunks.get(world);
     }
 }
