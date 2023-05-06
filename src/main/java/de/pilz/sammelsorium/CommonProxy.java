@@ -2,6 +2,7 @@ package de.pilz.sammelsorium;
 
 import net.minecraftforge.common.MinecraftForge;
 
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -36,7 +37,9 @@ public class CommonProxy {
         MyMod.LOG.info("Searching blocks and items from other Mods ...");
         ModManagement.findModItems();
 
-        MinecraftForge.EVENT_BUS.register(new EventHandlers());
+        EventHandlers handlers = new EventHandlers();
+        MinecraftForge.EVENT_BUS.register(handlers);
+        FMLCommonHandler.instance().bus().register(handlers);
     }
 
     // postInit "Handle interaction with other mods, complete your setup based on this." (Remove if not needed)

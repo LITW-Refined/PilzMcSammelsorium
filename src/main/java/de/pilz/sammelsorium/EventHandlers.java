@@ -57,20 +57,25 @@ public class EventHandlers {
                 && event.side == Side.SERVER
                 && event.world instanceof WorldServer) {
             var coordMap = getPendingForcedChunksForWorld((WorldServer) event.world);
+            var toRemove = new HashMap<ChunkCoordIntPair, Object>();
 
             for (ChunkCoordIntPair coords : coordMap.keySet()) {
                 Integer ticksWaited = coordMap.get(coords);
 
                 // Wait at least one second (= 20 ticks) before loading forced chunks.
-                if (ticksWaited == 20) {
+                if (ticksWaited >= 20) {
                     IChunkProvider provider = ((WorldServer) event.world).getChunkProvider();
                     if (!provider.chunkExists(coords.chunkXPos, coords.chunkZPos)) {
                         provider.loadChunk(coords.chunkXPos, coords.chunkZPos);
                     }
-                    coordMap.remove(coords);
+                    toRemove.put(coords, null);
                 } else {
                     coordMap.put(coords, ticksWaited + 1);
                 }
+            }
+
+            for (ChunkCoordIntPair coords : toRemove.keySet()) {
+                coordMap.remove(coords);
             }
         }
     }
