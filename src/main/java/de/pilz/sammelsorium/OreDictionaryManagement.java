@@ -9,7 +9,8 @@ public class OreDictionaryManagement {
     public static final String ORE_DYE_RED = "dyeRed";
     public static final String ORE_DUST_GLOWSTONE = "dustGlowstone";
     public static final String ORE_LIST_ALLSEED = "listAllseed";
-
+    public static final String ORE_GEM_QUARTZ = "gemQuartz";
+    public static final String ORE_CRYSTAL_NETHER_QUARTZ = "crystalNetherQuartz";
     public static final String ORE_SHARD_PRISMARINE = "shardPrismarine";
     public static final String ORE_CRYSTAL_PRISMARINE_RAW = "crystalPrismarineRaw";
     public static final String ORE_CRYSTAL_PRISMARINE = "crystalPrismarine";
@@ -32,8 +33,8 @@ public class OreDictionaryManagement {
                         ModManagement.item_AE2_MultiMaterial,
                         1,
                         11);
-                OreDictionary.registerOre("gemQuartz", itemStackCleanNetherQuartzCrystal);
-                OreDictionary.registerOre("crystalNetherQuartz", itemStackCleanNetherQuartzCrystal);
+                OreDictionary.registerOre(ORE_GEM_QUARTZ, itemStackCleanNetherQuartzCrystal);
+                OreDictionary.registerOre(ORE_CRYSTAL_NETHER_QUARTZ, itemStackCleanNetherQuartzCrystal);
             }
         }
     }
