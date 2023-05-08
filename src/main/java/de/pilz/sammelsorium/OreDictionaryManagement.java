@@ -1,5 +1,6 @@
 package de.pilz.sammelsorium;
 
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class OreDictionaryManagement {
@@ -21,6 +22,19 @@ public class OreDictionaryManagement {
         }
         if (Config.enableRedstoneFlower) {
             OreDictionary.registerOre(ORE_LIST_ALLSEED, RegisterManagement.itemCropsRedstone);
+        }
+    }
+
+    public static void RegisterModOres() {
+        if (ModManagement.isModInstalled(ModManagement.MOD_AE2)) {
+            if (ModManagement.item_AE2_MultiMaterial != null) {
+                ItemStack itemStackCleanNetherQuartzCrystal = new ItemStack(
+                        ModManagement.item_AE2_MultiMaterial,
+                        1,
+                        11);
+                OreDictionary.registerOre("gemQuartz", itemStackCleanNetherQuartzCrystal);
+                OreDictionary.registerOre("crystalNetherQuartz", itemStackCleanNetherQuartzCrystal);
+            }
         }
     }
 }
