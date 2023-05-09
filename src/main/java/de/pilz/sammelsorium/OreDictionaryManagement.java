@@ -29,15 +29,15 @@ public class OreDictionaryManagement {
     }
 
     public static void RegisterModOres() {
-        if (ModManagement.isModInstalled(ModManagement.MOD_AE2)) {
-            if (ModManagement.item_AE2_MultiMaterial != null) {
-                ItemStack itemStackCleanNetherQuartzCrystal = new ItemStack(
-                        ModManagement.item_AE2_MultiMaterial,
-                        1,
-                        11);
-                OreDictionary.registerOre(ORE_GEM_QUARTZ, itemStackCleanNetherQuartzCrystal);
-                OreDictionary.registerOre(ORE_CRYSTAL_NETHER_QUARTZ, itemStackCleanNetherQuartzCrystal);
-            }
-        }
+        // if (ModManagement.isModInstalled(ModManagement.MOD_AE2)) {
+        //     if (ModManagement.item_AE2_MultiMaterial != null) {
+        //         ItemStack itemStackCleanNetherQuartzCrystal = new ItemStack(
+        //                 ModManagement.item_AE2_MultiMaterial,
+        //                 1,
+        //                 11);
+        //         OreDictionary.registerOre(ORE_GEM_QUARTZ, itemStackCleanNetherQuartzCrystal);
+        //         OreDictionary.registerOre(ORE_CRYSTAL_NETHER_QUARTZ, itemStackCleanNetherQuartzCrystal);
+        //     }
+        // }
     }
 }
