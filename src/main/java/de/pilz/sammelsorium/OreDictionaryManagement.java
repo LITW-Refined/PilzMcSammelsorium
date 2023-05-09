@@ -9,6 +9,7 @@ public class OreDictionaryManagement {
     public static final String ORE_DYE_RED = "dyeRed";
     public static final String ORE_DUST_GLOWSTONE = "dustGlowstone";
     public static final String ORE_LIST_ALLSEED = "listAllseed";
+    public static final String ORE_CROP_REDSTONE = "cropRedstone";
     public static final String ORE_GEM_QUARTZ = "gemQuartz";
     public static final String ORE_CRYSTAL_NETHER_QUARTZ = "crystalNetherQuartz";
     public static final String ORE_SHARD_PRISMARINE = "shardPrismarine";
@@ -22,6 +23,7 @@ public class OreDictionaryManagement {
             OreDictionary.registerOre(ORE_CRYSTAL_PRISMARINE, RegisterManagement.itemStackPrismarineCrystal);
         }
         if (Config.enableRedstoneFlower) {
+            OreDictionary.registerOre(ORE_CROP_REDSTONE, RegisterManagement.itemCropsRedstone);
             OreDictionary.registerOre(ORE_LIST_ALLSEED, RegisterManagement.itemCropsRedstone);
         }
     }
