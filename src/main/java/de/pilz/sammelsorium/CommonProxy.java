@@ -29,13 +29,19 @@ public class CommonProxy {
 
     // load "Do your mod setup. Build whatever data structures you care about. Register recipes." (Remove if not needed)
     public void init(FMLInitializationEvent event) {
+        MyMod.LOG.info("Searching blocks and items from other Mods ...");
+        ModManagement.findModItems();
+
+        if (Config.registerModOres) {
+            // Not sure if this is too late, but NewHorzizonCoreMod does it similar.
+            MyMod.LOG.info("Registering Mod items and blocks to Ore Dictionary ...");
+            OreDictionaryManagement.RegisterModOres();
+        }
+
         if (!Config.disableAllRecipes) {
             MyMod.LOG.info("Registering recipes...");
             RecipesManagement.RegisterAllRecipes();
         }
-
-        MyMod.LOG.info("Searching blocks and items from other Mods ...");
-        ModManagement.findModItems();
 
         EventHandlers handlers = new EventHandlers();
         MinecraftForge.EVENT_BUS.register(handlers);

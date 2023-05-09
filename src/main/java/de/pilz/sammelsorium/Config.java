@@ -16,6 +16,7 @@ public class Config {
     public static Boolean disableChunkLoadingOnRequest = false;
     public static Boolean autoLoadChunksOnTicketCreation = true;
     public static Boolean searchForModBlocksAndItems = true;
+    public static Boolean registerModOres = true;
 
     public static void synchronizeConfiguration(File configFile) {
         Configuration configuration = new Configuration(configFile);
@@ -55,6 +56,11 @@ public class Config {
                 CATEGORY_MOD_INTEGRATION,
                 searchForModBlocksAndItems,
                 "If disabled, the most mod integrations will not work. Only disable, if you announce an error while that get fixed when off.");
+        registerModOres = configuration.getBoolean(
+                "registerModOres",
+                CATEGORY_MOD_INTEGRATION,
+                registerModOres,
+                "If enabled, a few known mod items and blocks get reigsted at the Ore Dictionary.\"searchForModBlocksAndItems\" needs to be true.");
 
         if (configuration.hasChanged()) {
             configuration.save();
