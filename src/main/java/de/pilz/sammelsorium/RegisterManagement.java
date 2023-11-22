@@ -6,9 +6,14 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import de.pilz.sammelsorium.blocks.*;
-import de.pilz.sammelsorium.items.*;
-import de.pilz.sammelsorium.items.blocks.*;
+import de.pilz.sammelsorium.blocks.BlockCropsRedstone;
+import de.pilz.sammelsorium.blocks.BlockCropsRedstoneDeco;
+import de.pilz.sammelsorium.blocks.BlockSeaLantern;
+import de.pilz.sammelsorium.items.ItemCropsRedstone;
+import de.pilz.sammelsorium.items.ItemFlowersRedstone;
+import de.pilz.sammelsorium.items.ItemPrismarine;
+import de.pilz.sammelsorium.items.blocks.ItemBlockDeco;
+import de.pilz.sammelsorium.items.blocks.ItemBlockSeaLantern;
 import de.pilz.sammelsorium.strings.BlockNames;
 import de.pilz.sammelsorium.strings.ItemNames;
 
