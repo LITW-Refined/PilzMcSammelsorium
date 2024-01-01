@@ -30,8 +30,8 @@ public abstract class MixinEntityMob {
     @Shadow
     public World worldObj;
 
-    @Inject(method = "isValidLightLevel", at = @At("RETURN"), cancellable = true)
-    protected void pilzmcsammelsorium_isValidLightLevel(CallbackInfoReturnable<Boolean> clb) {
+    @Inject(method = "isValidLightLevel()Z", at = @At("RETURN"), cancellable = true)
+    protected void pilzmcsammelsorium$isValidLightLevel(CallbackInfoReturnable<Boolean> clb) {
         MyMod.LOG.info("MIXINSUCCESS!!!");
 
         if (!clb.getReturnValue()) return;
