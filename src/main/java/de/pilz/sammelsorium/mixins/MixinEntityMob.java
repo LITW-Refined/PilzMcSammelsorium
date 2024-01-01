@@ -1,39 +1,38 @@
 package de.pilz.sammelsorium.mixins;
 
+import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.monster.EntityMob;
-import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import de.pilz.sammelsorium.MyMod;
-
 @Mixin(EntityMob.class)
-public abstract class MixinEntityMob {
+public abstract class MixinEntityMob extends EntityCreature {
 
-    @Shadow
-    public double posX;
+    public MixinEntityMob(World p_i1738_1_)
+    {
+        super(p_i1738_1_);
+    }
 
-    @Shadow
-    public double posZ;
+    // @Shadow // Not possible for member from a super class!
+    // public double posX;
 
-    @Final
-    @Shadow
-    public AxisAlignedBB boundingBox;
+    // @Shadow // Not possible for member from a super class!
+    // public double posZ;
 
-    @Shadow
-    public World worldObj;
+    // @Final
+    // @Shadow // Not possible for member from a super class!
+    // public AxisAlignedBB boundingBox;
+
+    // @Shadow // Not possible for member from a super class!
+    // public World worldObj;
 
     @Inject(method = "isValidLightLevel()Z", at = @At("RETURN"), cancellable = true)
     protected void pilzmcsammelsorium$isValidLightLevel(CallbackInfoReturnable<Boolean> clb) {
-        MyMod.LOG.info("MIXINSUCCESS!!!");
-
         if (!clb.getReturnValue()) return;
 
         int x = MathHelper.floor_double(this.posX);
