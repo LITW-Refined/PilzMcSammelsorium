@@ -10,11 +10,12 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+import de.pilz.sammelsorium.Config;
+
 @Mixin(EntityMob.class)
 public abstract class EntityMobMixin extends EntityCreature {
 
-    public EntityMobMixin(World p_i1738_1_)
-    {
+    public EntityMobMixin(World p_i1738_1_) {
         super(p_i1738_1_);
     }
 
@@ -33,14 +34,23 @@ public abstract class EntityMobMixin extends EntityCreature {
 
     @Inject(method = "isValidLightLevel()Z", at = @At("RETURN"), cancellable = true)
     protected void pilzmcsammelsorium$isValidLightLevel(CallbackInfoReturnable<Boolean> clb) {
-        if (!clb.getReturnValue()) return;
+        if (!Config.spawnLightLevelModificationEnable || !clb.getReturnValue()) return;
 
-        int x = MathHelper.floor_double(this.posX);
-        int y = MathHelper.floor_double(this.boundingBox.minY);
-        int z = MathHelper.floor_double(this.posZ);
+        if (allowInThisDimension(worldObj.provider.dimensionId)) {
+            int x = MathHelper.floor_double(this.posX);
+            int y = MathHelper.floor_double(this.boundingBox.minY);
+            int z = MathHelper.floor_double(this.posZ);
 
-        if (this.worldObj.getBlockLightValue(x, y, z) > 0) {
-            clb.setReturnValue(false);
+            if (this.worldObj.getBlockLightValue(x, y, z) > Config.spawnLightLevelModificationValue) {
+                clb.setReturnValue(false);
+            }
         }
+    }
+
+    private static Boolean allowInThisDimension(int dimensionID) {
+        for (final int dID : Config.spawnLightLevelModificationDimensionBlackList) {
+            if (dID == dimensionID) return false;
+        }
+        return true;
     }
 }
