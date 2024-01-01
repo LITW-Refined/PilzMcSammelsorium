@@ -11,9 +11,9 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(EntityMob.class)
-public abstract class MixinEntityMob extends EntityCreature {
+public abstract class EntityMobMixin extends EntityCreature {
 
-    public MixinEntityMob(World p_i1738_1_)
+    public EntityMobMixin(World p_i1738_1_)
     {
         super(p_i1738_1_);
     }
