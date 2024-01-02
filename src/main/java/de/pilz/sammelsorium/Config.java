@@ -84,8 +84,8 @@ public class Config {
                 15,
                 "Defines the required light level where hostile mobs should spawn. Requires \"spawnLightLevelModificationEnable\" to be true to take effect. This probably don't work if you want to increase the light level (yet).");
         spawnLightLevelModificationDimensionBlackList = configuration.get(
-                "spawnLightLevelModificationDimensionBlackList",
                 CATEGORY_MIXINS_SPAWNLIGHTLEVEL,
+                "spawnLightLevelModificationDimensionBlackList",
                 spawnLightLevelModificationDimensionBlackList,
                 "Defines a list of dimension IDs where the config \"spawnLightLevelModificationEnable\" should NOT take effect. By default, this is the Nether and The End. Extnd with your own dimensions if needed.")
                 .getIntList();
