@@ -5,7 +5,11 @@
   "refmap": "mixins.pilzmcsammelsorium.refmap.json",
   "target": "@env(DEFAULT)",
   "compatibilityLevel": "JAVA_8",
-  "mixins": [],
+  "mixins": [
+    "EntityMobMixin",
+    "EntityBlazeMixin",
+    "EntitySlimeMixin"
+  ],
   "client": [],
   "server": []
 }
