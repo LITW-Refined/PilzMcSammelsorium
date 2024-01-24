@@ -15,7 +15,7 @@ public class CommonProxy {
     public void preInit(FMLPreInitializationEvent event) {
         Config.synchronizeConfiguration(event.getSuggestedConfigurationFile());
 
-        MyMod.LOG.info("I am " + Tags.MODNAME + " at version " + Tags.VERSION);
+        MyMod.LOG.info("I am " + MyMod.MODNAME + " at version " + Tags.VERSION);
 
         MyMod.LOG.info("Registering items ...");
         RegisterManagement.RegisterAllItems();
