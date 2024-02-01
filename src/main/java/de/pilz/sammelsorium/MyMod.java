@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -17,6 +18,9 @@ public class MyMod {
     public static final String MODID = "pilzmcsammelsorium";
     public static final String GROUPNAME = "de.pilz.sammelsorium";
     public static final Logger LOG = LogManager.getLogger(MODID);
+
+    @Instance(MODID)
+    public static MyMod Instance;
 
     @SidedProxy(clientSide = "de.pilz.sammelsorium.ClientProxy", serverSide = "de.pilz.sammelsorium.CommonProxy")
     public static CommonProxy proxy;
