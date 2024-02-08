@@ -16,7 +16,8 @@ import de.pilz.sammelsorium.proxies.CommonProxy;
     modid = PilzMcSammelsorium.MODID,
     version = Tags.VERSION,
     name = PilzMcSammelsorium.MODNAME,
-    acceptedMinecraftVersions = "[1.7.10]")
+    acceptedMinecraftVersions = "[1.7.10]",
+    guiFactory = "de.pilz.sammelsorium.configuration.gui.PilzMcSammelsoriumGuiConfigFactory")
 public class PilzMcSammelsorium {
 
     public static final String MODNAME = "Pilz' Sammelsorium";
