@@ -20,8 +20,8 @@ public class Utils {
         return false;
     }
 
-    public static boolean shouldBlockSpawnByLightLevel(EntityLivingBase creature, boolean currentValue) {
-        if (SpawnLightLevelConfigs.spawnLightLevelModificationEnable && currentValue
+    public static boolean shouldBlockSpawnByLightLevel(EntityLivingBase creature) {
+        if (SpawnLightLevelConfigs.spawnLightLevelModificationEnable
             && allowLightLevelSpawnInThisDimension(creature.worldObj.provider.dimensionId)) {
             int x = MathHelper.floor_double(creature.posX);
             int y = MathHelper.floor_double(creature.boundingBox.minY);

@@ -2,14 +2,17 @@ package de.pilz.sammelsorium;
 
 import java.util.HashMap;
 
+import net.minecraft.entity.monster.IMob;
 import net.minecraft.world.ChunkCoordIntPair;
 import net.minecraft.world.WorldServer;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.ChunkProviderServer;
 import net.minecraftforge.common.ForgeChunkManager.ForceChunkEvent;
 import net.minecraftforge.common.ForgeChunkManager.UnforceChunkEvent;
+import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.event.world.WorldEvent;
 
+import cpw.mods.fml.common.eventhandler.Event.Result;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent.WorldTickEvent;
 import cpw.mods.fml.relauncher.Side;
@@ -86,5 +89,14 @@ public class EventHandlers {
             pendingForcedChunks.put(world, new HashMap<>());
         }
         return pendingForcedChunks.get(world);
+    }
+
+    @SubscribeEvent
+    public void onCheckSpawn(LivingSpawnEvent.CheckSpawn event) {
+        if ((event.entityLiving instanceof IMob) && event.getResult() != Result.DENY) {
+            if (Utils.shouldBlockSpawnByLightLevel(event.entityLiving)) {
+                event.setResult(Result.DENY);
+            }
+        }
     }
 }
