@@ -14,6 +14,7 @@ import de.pilz.sammelsorium.PilzMcSammelsorium;
 import de.pilz.sammelsorium.RecipesManagement;
 import de.pilz.sammelsorium.RegisterManagement;
 import de.pilz.sammelsorium.Tags;
+import de.pilz.sammelsorium.configuration.ConfigManager;
 import de.pilz.sammelsorium.configuration.GeneralConfigs;
 import de.pilz.sammelsorium.configuration.ModIntegrationConfigs;
 
@@ -22,6 +23,8 @@ public class CommonProxy {
     // preInit "Run before anything else. Read your config, create blocks, items, etc, and register them with the
     // GameRegistry." (Remove if not needed)
     public void preInit(FMLPreInitializationEvent event) {
+        ConfigManager.registerConfigs();
+
         PilzMcSammelsorium.LOG.info("I am " + PilzMcSammelsorium.MODNAME + " at version " + Tags.VERSION);
 
         PilzMcSammelsorium.LOG.info("Registering items ...");

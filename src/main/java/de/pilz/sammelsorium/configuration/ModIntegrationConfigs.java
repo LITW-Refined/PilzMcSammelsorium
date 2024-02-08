@@ -10,11 +10,10 @@ public class ModIntegrationConfigs {
     @Config.Comment("If disabled, the most mod integrations will not work. Only disable, if you announce an error while that get fixed when off.")
     @Config.DefaultBoolean(true)
     @Config.RequiresMcRestart
-    public static Boolean searchForModBlocksAndItems = true;
+    public static boolean searchForModBlocksAndItems;
 
     @Config.Comment("If enabled, a few known mod items and blocks get reigsted at the Ore Dictionary.\"searchForModBlocksAndItems\" needs to be true.")
     @Config.DefaultBoolean(true)
     @Config.RequiresMcRestart
-    public static Boolean registerModOres = true;
-
+    public static boolean registerModOres;
 }

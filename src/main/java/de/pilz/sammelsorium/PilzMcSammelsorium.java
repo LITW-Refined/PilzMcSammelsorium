@@ -27,7 +27,9 @@ public class PilzMcSammelsorium {
     @Instance(MODID)
     public static PilzMcSammelsorium instance;
 
-    @SidedProxy(clientSide = "de.pilz.sammelsorium.proxies.ClientProxy", serverSide = "de.pilz.sammelsorium.proxies.CommonProxy")
+    @SidedProxy(
+        clientSide = "de.pilz.sammelsorium.proxies.ClientProxy",
+        serverSide = "de.pilz.sammelsorium.proxies.CommonProxy")
     public static CommonProxy proxy;
 
     @Mod.EventHandler

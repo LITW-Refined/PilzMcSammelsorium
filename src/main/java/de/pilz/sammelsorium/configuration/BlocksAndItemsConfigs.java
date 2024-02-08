@@ -10,16 +10,15 @@ public class BlocksAndItemsConfigs {
     @Config.Comment("Enables the Prismarine Shards, Raw Crystals and Crystals.")
     @Config.DefaultBoolean(true)
     @Config.RequiresMcRestart()
-    public static Boolean enablePrismarine = true;
+    public static boolean enablePrismarine;
 
     @Config.Comment("Enables the Redstone Flower and Seeds.")
     @Config.DefaultBoolean(true)
     @Config.RequiresMcRestart()
-    public static Boolean enableRedstoneFlower = true;
+    public static boolean enableRedstoneFlower;
 
     @Config.Comment("Enables all decoration variants of supported blocks and items. Useful for creating quests and custom NPCs.")
     @Config.DefaultBoolean(false)
     @Config.RequiresMcRestart()
-    public static Boolean enableDecoBlocksAndItems = false;
-
+    public static boolean enableDecoBlocksAndItems;
 }

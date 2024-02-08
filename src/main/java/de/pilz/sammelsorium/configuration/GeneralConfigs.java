@@ -10,6 +10,5 @@ public class GeneralConfigs {
     @Config.Comment("Disables all recipes if true. Useful for making custom recipes.")
     @Config.DefaultBoolean(false)
     @Config.RequiresMcRestart()
-    public static Boolean disableAllRecipes = false;
-
+    public static boolean disableAllRecipes;
 }
