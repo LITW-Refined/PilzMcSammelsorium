@@ -13,6 +13,7 @@ import net.minecraftforge.event.world.WorldEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent.WorldTickEvent;
 import cpw.mods.fml.relauncher.Side;
+import de.pilz.sammelsorium.configuration.ExperimentalConfigs;
 
 public class EventHandlers {
 
@@ -20,7 +21,7 @@ public class EventHandlers {
 
     @SubscribeEvent
     public void onWorldLoad(WorldEvent.Load event) {
-        if (Config.disableChunkLoadingOnRequest && !event.world.isRemote) {
+        if (ExperimentalConfigs.disableChunkLoadingOnRequest && !event.world.isRemote) {
             IChunkProvider chunkProvider = event.world.getChunkProvider();
             if (chunkProvider instanceof ChunkProviderServer) {
                 ((ChunkProviderServer) chunkProvider).loadChunkOnProvideRequest = false;
@@ -30,8 +31,8 @@ public class EventHandlers {
 
     @SubscribeEvent
     public void onChunkForce(ForceChunkEvent event) {
-        if (Config.disableChunkLoadingOnRequest && Config.autoLoadChunksOnTicketCreation
-                && !event.ticket.world.isRemote) {
+        if (ExperimentalConfigs.disableChunkLoadingOnRequest && ExperimentalConfigs.autoLoadChunksOnTicketCreation
+            && !event.ticket.world.isRemote) {
             if (event.ticket.world instanceof WorldServer) {
                 // Do not load the chunk instantly to prevent colidation with sync chunk loading and chunkloaders that
                 // creates a ticket while loading the chunk.
@@ -53,9 +54,9 @@ public class EventHandlers {
 
     @SubscribeEvent
     public void onWorldTick(WorldTickEvent event) {
-        if (Config.disableChunkLoadingOnRequest && Config.autoLoadChunksOnTicketCreation
-                && event.side == Side.SERVER
-                && event.world instanceof WorldServer) {
+        if (ExperimentalConfigs.disableChunkLoadingOnRequest && ExperimentalConfigs.autoLoadChunksOnTicketCreation
+            && event.side == Side.SERVER
+            && event.world instanceof WorldServer) {
             var coordMap = getPendingForcedChunksForWorld((WorldServer) event.world);
             var toRemove = new HashMap<ChunkCoordIntPair, Object>();
 

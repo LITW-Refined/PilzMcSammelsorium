@@ -9,6 +9,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import de.pilz.sammelsorium.blocks.BlockCropsRedstone;
 import de.pilz.sammelsorium.blocks.BlockCropsRedstoneDeco;
 import de.pilz.sammelsorium.blocks.BlockSeaLantern;
+import de.pilz.sammelsorium.configuration.BlocksAndItemsConfigs;
 import de.pilz.sammelsorium.items.ItemCropsRedstone;
 import de.pilz.sammelsorium.items.ItemFlowersRedstone;
 import de.pilz.sammelsorium.items.ItemPrismarine;
@@ -32,22 +33,22 @@ public class RegisterManagement {
     public static ItemStack itemStackPrismarineCrystalRaw = new ItemStack(itemPrismarine, 1, 2);
 
     public static void RegisterAllItems() {
-        if (Config.enablePrismarine) {
+        if (BlocksAndItemsConfigs.enablePrismarine) {
             GameRegistry.registerItem(itemPrismarine, ItemNames.PRISMARINE_SHARD);
         }
-        if (Config.enableRedstoneFlower) {
+        if (BlocksAndItemsConfigs.enableRedstoneFlower) {
             GameRegistry.registerItem(itemCropsRedstone, ItemNames.CROPS_REDSTONE);
             GameRegistry.registerItem(itemFlowerRedstone, ItemNames.FLOWERS_REDSTONE);
         }
     }
 
     public static void RegisterAllBlocks() {
-        if (Config.enablePrismarine) {
+        if (BlocksAndItemsConfigs.enablePrismarine) {
             GameRegistry.registerBlock(blockSeaLantern, ItemBlockSeaLantern.class, BlockNames.SEA_LANTERN);
         }
-        if (Config.enableRedstoneFlower) {
+        if (BlocksAndItemsConfigs.enableRedstoneFlower) {
             GameRegistry.registerBlock(blockCropsRedstone, ItemBlock.class, BlockNames.CROPS_REDSTONE);
-            if (Config.enableDecoBlocksAndItems) {
+            if (BlocksAndItemsConfigs.enableDecoBlocksAndItems) {
                 GameRegistry.registerBlock(blockCropsRedstoneDeco, ItemBlockDeco.class, BlockNames.CROPS_REDSTONE_DECO);
             }
         }

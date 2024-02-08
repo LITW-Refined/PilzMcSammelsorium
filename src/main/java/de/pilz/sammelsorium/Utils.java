@@ -5,6 +5,8 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.MathHelper;
 
+import de.pilz.sammelsorium.configuration.SpawnLightLevelConfigs;
+
 public class Utils {
 
     public static boolean canPlantOn(Block block) {
@@ -19,13 +21,14 @@ public class Utils {
     }
 
     public static boolean shouldBlockSpawnByLightLevel(EntityLivingBase creature, boolean currentValue) {
-        if (Config.spawnLightLevelModificationEnable && currentValue
-                && allowLightLevelSpawnInThisDimension(creature.worldObj.provider.dimensionId)) {
+        if (SpawnLightLevelConfigs.spawnLightLevelModificationEnable && currentValue
+            && allowLightLevelSpawnInThisDimension(creature.worldObj.provider.dimensionId)) {
             int x = MathHelper.floor_double(creature.posX);
             int y = MathHelper.floor_double(creature.boundingBox.minY);
             int z = MathHelper.floor_double(creature.posZ);
 
-            if (creature.worldObj.getBlockLightValue(x, y, z) > Config.spawnLightLevelModificationValue) {
+            if (creature.worldObj.getBlockLightValue(x, y, z)
+                > SpawnLightLevelConfigs.spawnLightLevelModificationValue) {
                 return true;
             }
         }
@@ -34,8 +37,9 @@ public class Utils {
     }
 
     private static Boolean allowLightLevelSpawnInThisDimension(int dimensionID) {
-        for (final int dID : Config.spawnLightLevelModificationDimensionBlackList) {
-            if (dID == dimensionID) return false;
+        String dimensionIDStr = "" + dimensionID;
+        for (final String dID : SpawnLightLevelConfigs.spawnLightLevelModificationDimensionBlackList) {
+            if (dID == dimensionIDStr) return false;
         }
         return true;
     }

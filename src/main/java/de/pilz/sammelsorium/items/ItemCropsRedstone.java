@@ -45,7 +45,7 @@ public class ItemCropsRedstone extends Item implements IPlantable {
 
     @Override
     public boolean onItemUse(ItemStack parItemStack, EntityPlayer parPlayer, World parWorld, int parX, int parY,
-            int parZ, int par7, float par8, float par9, float par10) {
+        int parZ, int par7, float par8, float par9, float par10) {
         // not sure what this parameter does, copied it from potato
         if (par7 != 1) {
             return false;
@@ -54,8 +54,9 @@ public class ItemCropsRedstone extends Item implements IPlantable {
         else if (parPlayer.canPlayerEdit(parX, parY + 1, parZ, par7, parItemStack)) {
             // check that the soil block can sustain the plant
             // and that block above is air so there is room for plant to grow
-            if (parWorld.getBlock(parX, parY, parZ).canSustainPlant(parWorld, parX, parY, parZ, ForgeDirection.UP, this)
-                    && parWorld.isAirBlock(parX, parY + 1, parZ)) {
+            if (parWorld.getBlock(parX, parY, parZ)
+                .canSustainPlant(parWorld, parX, parY, parZ, ForgeDirection.UP, this)
+                && parWorld.isAirBlock(parX, parY + 1, parZ)) {
                 // place the plant block
                 parWorld.setBlock(parX, parY + 1, parZ, RegisterManagement.blockCropsRedstone);
                 // decrement the stack of seed items

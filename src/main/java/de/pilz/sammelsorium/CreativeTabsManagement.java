@@ -22,6 +22,7 @@ public class CreativeTabsManagement {
 
     @SuppressWarnings("deprecation")
     public static void RegisterNames() {
-        LanguageRegistry.instance().addStringLocalization("itemGroup." + TAB_NAME_GENERAL, "en_US", MyMod.MODNAME);
+        LanguageRegistry.instance()
+            .addStringLocalization("itemGroup." + TAB_NAME_GENERAL, "en_US", PilzMcSammelsorium.MODNAME);
     }
 }

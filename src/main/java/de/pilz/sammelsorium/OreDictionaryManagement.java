@@ -2,6 +2,8 @@ package de.pilz.sammelsorium;
 
 import net.minecraftforge.oredict.OreDictionary;
 
+import de.pilz.sammelsorium.configuration.BlocksAndItemsConfigs;
+
 public class OreDictionaryManagement {
 
     public static final String ORE_ITEM_CLAY = "itemClay";
@@ -16,12 +18,12 @@ public class OreDictionaryManagement {
     public static final String ORE_CRYSTAL_PRISMARINE = "crystalPrismarine";
 
     public static void RegisterOres() {
-        if (Config.enablePrismarine) {
+        if (BlocksAndItemsConfigs.enablePrismarine) {
             OreDictionary.registerOre(ORE_SHARD_PRISMARINE, RegisterManagement.itemStackPrismarineShard);
             OreDictionary.registerOre(ORE_CRYSTAL_PRISMARINE_RAW, RegisterManagement.itemStackPrismarineCrystalRaw);
             OreDictionary.registerOre(ORE_CRYSTAL_PRISMARINE, RegisterManagement.itemStackPrismarineCrystal);
         }
-        if (Config.enableRedstoneFlower) {
+        if (BlocksAndItemsConfigs.enableRedstoneFlower) {
             OreDictionary.registerOre(ORE_CROP_REDSTONE, RegisterManagement.itemCropsRedstone);
             OreDictionary.registerOre(ORE_LIST_ALLSEED, RegisterManagement.itemCropsRedstone);
         }

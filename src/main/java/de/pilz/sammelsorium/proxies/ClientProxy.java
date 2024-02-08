@@ -1,6 +1,7 @@
-package de.pilz.sammelsorium;
+package de.pilz.sammelsorium.proxies;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import de.pilz.sammelsorium.CreativeTabsManagement;
 
 public class ClientProxy extends CommonProxy {
 

@@ -57,8 +57,8 @@ public class BlockCropsRedstoneDeco extends BlockCrops {
 
         for (int i = 0; i < myIcons.length; i++) {
             int stage = (int) (i / 2);
-            myIcons[i] = iconRegister.registerIcon(
-                    OtherStrings.MOD_PREFIX + BlockNames.CROPS_REDSTONE + OtherStrings.STAGE_POSTFIX + stage);
+            myIcons[i] = iconRegister
+                .registerIcon(OtherStrings.MOD_PREFIX + BlockNames.CROPS_REDSTONE + OtherStrings.STAGE_POSTFIX + stage);
         }
     }
 }

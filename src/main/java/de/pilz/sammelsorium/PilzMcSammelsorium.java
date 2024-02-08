@@ -10,9 +10,14 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
+import de.pilz.sammelsorium.proxies.CommonProxy;
 
-@Mod(modid = MyMod.MODID, version = Tags.VERSION, name = MyMod.MODNAME, acceptedMinecraftVersions = "[1.7.10]")
-public class MyMod {
+@Mod(
+    modid = PilzMcSammelsorium.MODID,
+    version = Tags.VERSION,
+    name = PilzMcSammelsorium.MODNAME,
+    acceptedMinecraftVersions = "[1.7.10]")
+public class PilzMcSammelsorium {
 
     public static final String MODNAME = "Pilz' Sammelsorium";
     public static final String MODID = "pilzmcsammelsorium";
@@ -20,7 +25,7 @@ public class MyMod {
     public static final Logger LOG = LogManager.getLogger(MODID);
 
     @Instance(MODID)
-    public static MyMod instance;
+    public static PilzMcSammelsorium instance;
 
     @SidedProxy(clientSide = "de.pilz.sammelsorium.ClientProxy", serverSide = "de.pilz.sammelsorium.CommonProxy")
     public static CommonProxy proxy;

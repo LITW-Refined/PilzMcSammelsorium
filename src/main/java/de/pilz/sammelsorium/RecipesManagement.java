@@ -7,6 +7,7 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import de.pilz.sammelsorium.configuration.BlocksAndItemsConfigs;
 
 // spotless:off
 
@@ -17,7 +18,7 @@ public class RecipesManagement {
 
         // P r i s m a r i n e
 
-        if (Config.enablePrismarine) {
+        if (BlocksAndItemsConfigs.enablePrismarine) {
                 // Prismarine Crystal Raw
                 GameRegistry.addRecipe(new ShapedOreRecipe(
                         RegisterManagement.itemStackPrismarineCrystalRaw,
@@ -62,7 +63,7 @@ public class RecipesManagement {
 
         // G l o w   F l o w e r
 
-        if (Config.enableRedstoneFlower) {
+        if (BlocksAndItemsConfigs.enableRedstoneFlower) {
                 // Redstone Flower -> Dust
                 GameRegistry.addShapelessRecipe(
                         new ItemStack(Items.redstone, 4, 0),
@@ -87,7 +88,7 @@ public class RecipesManagement {
     }
 
     private static void addDecoRecipe(ItemStack output, Object keyItem1, Object keyItem2) {
-        if (Config.enableDecoBlocksAndItems) {
+        if (BlocksAndItemsConfigs.enableDecoBlocksAndItems) {
                 GameRegistry.addRecipe(new ShapelessOreRecipe(
                         output,
                         new Object[] {
