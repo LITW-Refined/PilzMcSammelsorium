@@ -52,8 +52,6 @@ I'm using this for an NPC that has a little field of Redstone Flowers. The NPC w
 
 There is an option to adjust the required light level needed for hostile mobs to spawn. This were initially inteded to set the light level to 0, like it is in Minecraft 1.18+, because we really don't want Monsters at day int he forest in a mostly peaceful world. They are fine at night and fine at thunderstorm and also fine in Nehter and The End, but that's all.
 
-**Note:** _This option is now obsulated as I made a PR to [Et Futurum Requiem](https://github.com/Roadhog360/Et-Futurum-Requiem). I keep it there for now. Maybe I tink about to remove that option and reference the new option in EFR._
-
 ## Experimental Options
 
 ### Disable chunk loading on request
