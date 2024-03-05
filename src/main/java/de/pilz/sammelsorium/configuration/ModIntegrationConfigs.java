@@ -16,4 +16,9 @@ public class ModIntegrationConfigs {
     @Config.DefaultBoolean(true)
     @Config.RequiresMcRestart
     public static boolean registerModOres;
+
+    @Config.Comment("Overwrites Forestrys method to get the players user profile and always return a offline UUID. Only enable this, if your server runs in offline mode.")
+    @Config.DefaultBoolean(false)
+    @Config.RequiresMcRestart
+    public static boolean forestryMailFixOfflineUUDID;
 }
