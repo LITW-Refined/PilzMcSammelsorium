@@ -18,9 +18,7 @@ public abstract class MixinForestryPostRegistry implements IMailAddress {
     @Inject(method = "toString()Ljava/lang/String;", at = @At("HEAD"), cancellable = true, remap = false)
     public void pilzmcsammelsorium$fixOfflineUUID(CallbackInfoReturnable<String> callback) {
         if (ModIntegrationConfigs.forestryMailFixOfflineUUDID && isPlayer()) {
-            MailAddress $this = (MailAddress) (Object) this;
-            String name = $this.getName()
-                .toLowerCase(Locale.ENGLISH);
+            String name = getName().toLowerCase(Locale.ENGLISH);
             callback.setReturnValue(EnumAddressee.PLAYER.toString() + "-" + name);
             callback.cancel();
         }
