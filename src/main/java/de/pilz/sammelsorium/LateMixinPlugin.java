@@ -26,6 +26,10 @@ public class LateMixinPlugin implements ILateMixinLoader {
             list.add("MixinForestryPostRegistry");
         }
 
+        if (loadedMods.contains("etfuturum")) {
+            list.add("MixinBlockLantern");
+        }
+
         return list;
     }
 }

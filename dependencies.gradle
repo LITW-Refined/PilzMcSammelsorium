@@ -24,4 +24,5 @@
 dependencies {
     api("com.github.GTNewHorizons:GTNHLib:0.2.3:dev")
     implementation("com.github.GTNewHorizons:ForestryMC:4.8.5:dev")
+    compileOnly(rfg.deobf("curse.maven:et-futurum-requiem-441392:5268121")) { transitive = false }
 }

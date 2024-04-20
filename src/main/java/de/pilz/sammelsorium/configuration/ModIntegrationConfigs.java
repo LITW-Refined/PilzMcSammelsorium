@@ -21,4 +21,9 @@ public class ModIntegrationConfigs {
     @Config.DefaultBoolean(false)
     @Config.RequiresMcRestart
     public static boolean forestryMailFixOfflineUUDID;
+
+    @Config.Comment("Allows to place lanterns of EFR everywhere.")
+    @Config.DefaultBoolean(true)
+    @Config.RequiresMcRestart
+    public static boolean etfuturumPlaceBlockLanternAnywhere;
 }
