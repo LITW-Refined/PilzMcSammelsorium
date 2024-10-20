@@ -41,7 +41,6 @@ public abstract class MixinTextureMap extends AbstractTexture implements ITickab
             target = "Lnet/minecraft/client/renderer/texture/TextureAtlasSprite;<init>(Ljava/lang/String;)V"),
         cancellable = true)
     private void registerInterpolatedIcon(String textureName, CallbackInfoReturnable<IIcon> cir) {
-        PilzMcSammelsorium.LOG.info("MIXIN TEXTUREMAP WORKING");
         try {
             IResource resource = Minecraft.getMinecraft()
                 .getResourceManager()
