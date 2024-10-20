@@ -10,7 +10,6 @@ import org.spongepowered.asm.mixin.MixinEnvironment;
 import com.gtnewhorizon.gtnhmixins.IEarlyMixinLoader;
 
 import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
-import de.pilz.sammelsorium.configuration.GeneralConfigs;
 
 @IFMLLoadingPlugin.Name("EarlyMixinPlugin")
 @IFMLLoadingPlugin.MCVersion("1.7.10")
