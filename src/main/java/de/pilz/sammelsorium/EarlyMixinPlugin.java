@@ -5,16 +5,19 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.spongepowered.asm.mixin.MixinEnvironment;
+
 import com.gtnewhorizon.gtnhmixins.IEarlyMixinLoader;
 
-import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
-import cpw.mods.fml.relauncher.Side;
 import de.pilz.sammelsorium.configuration.GeneralConfigs;
 
 @IFMLLoadingPlugin.Name("EarlyMixinPlugin")
 @IFMLLoadingPlugin.MCVersion("1.7.10")
 public class EarlyMixinPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader {
+
+    public static final MixinEnvironment.Side side = MixinEnvironment.getCurrentEnvironment()
+        .getSide();
 
     @Override
     public String getMixinConfig() {
@@ -26,9 +29,7 @@ public class EarlyMixinPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader {
         List<String> list = new ArrayList<String>();
 
         // Interpolated Textures
-        if (FMLCommonHandler.instance()
-            .getSide() == Side.CLIENT && GeneralConfigs.enableInterpolatedTextures
-            && !loadedMods.contains("notfine")) {
+        if (side == MixinEnvironment.Side.CLIENT && !loadedMods.contains("notfine")) {
             list.add("MixinTextureMap");
         }
 
