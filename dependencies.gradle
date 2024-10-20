@@ -22,7 +22,7 @@
  * For more details, see https://docs.gradle.org/7.6/userguide/java_library_plugin.html#sec:java_library_configurations_graph
  */
 dependencies {
-    api("com.github.GTNewHorizons:GTNHLib:0.2.3:dev")
-    implementation("com.github.GTNewHorizons:ForestryMC:4.8.5:dev")
-    compileOnly(rfg.deobf("curse.maven:et-futurum-requiem-441392:5369455")) { transitive = false }
+    api("com.github.GTNewHorizons:GTNHLib:0.5.15:dev")
+    implementation("com.github.GTNewHorizons:ForestryMC:4.9.16:dev")
+    compileOnly(rfg.deobf("curse.maven:et-futurum-requiem-441392:5369458")) { transitive = false }
 }

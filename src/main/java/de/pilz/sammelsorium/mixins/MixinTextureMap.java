@@ -21,6 +21,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import com.google.gson.JsonObject;
 
+import de.pilz.sammelsorium.PilzMcSammelsorium;
 import de.pilz.sammelsorium.render.InterpolatedIcon;
 
 @Mixin(TextureMap.class)
@@ -40,6 +41,7 @@ public abstract class MixinTextureMap extends AbstractTexture implements ITickab
             target = "Lnet/minecraft/client/renderer/texture/TextureAtlasSprite;<init>(Ljava/lang/String;)V"),
         cancellable = true)
     private void registerInterpolatedIcon(String textureName, CallbackInfoReturnable<IIcon> cir) {
+        PilzMcSammelsorium.LOG.info("MIXIN TEXTUREMAP WORKING");
         try {
             IResource resource = Minecraft.getMinecraft()
                 .getResourceManager()
