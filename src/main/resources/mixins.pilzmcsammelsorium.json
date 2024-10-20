@@ -5,8 +5,7 @@
   "refmap": "mixins.pilzmcsammelsorium.refmap.json",
   "target": "@env(DEFAULT)",
   "compatibilityLevel": "JAVA_8",
-  "mixins": [
-  ],
-  "client": [],
-  "server": []
+  "overwrites": {
+    "conformVisibility": true
+  }
 }
