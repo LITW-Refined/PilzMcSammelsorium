@@ -5,12 +5,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import com.gtnewhorizon.gtnhmixins.IEarlyMixinLoader;
+
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
 import cpw.mods.fml.relauncher.Side;
 import de.pilz.sammelsorium.configuration.GeneralConfigs;
-
-import com.gtnewhorizon.gtnhmixins.IEarlyMixinLoader;
 
 @IFMLLoadingPlugin.Name("EarlyMixinPlugin")
 @IFMLLoadingPlugin.MCVersion("1.7.10")
@@ -26,7 +26,9 @@ public class EarlyMixinPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader {
         List<String> list = new ArrayList<String>();
 
         // Interpolated Textures
-        if (FMLCommonHandler.instance().getSide() == Side.CLIENT && GeneralConfigs.enableInterpolatedTextures && !loadedMods.contains("notfine")) {
+        if (FMLCommonHandler.instance()
+            .getSide() == Side.CLIENT && GeneralConfigs.enableInterpolatedTextures
+            && !loadedMods.contains("notfine")) {
             list.add("MixinTextureMap");
         }
 
@@ -49,8 +51,7 @@ public class EarlyMixinPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader {
     }
 
     @Override
-    public void injectData(Map<String, Object> data) {
-    }
+    public void injectData(Map<String, Object> data) {}
 
     @Override
     public String getAccessTransformerClass() {
