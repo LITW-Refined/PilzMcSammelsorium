@@ -21,7 +21,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import com.google.gson.JsonObject;
 
-import de.pilz.sammelsorium.PilzMcSammelsorium;
 import de.pilz.sammelsorium.render.InterpolatedIcon;
 
 @Mixin(TextureMap.class)
