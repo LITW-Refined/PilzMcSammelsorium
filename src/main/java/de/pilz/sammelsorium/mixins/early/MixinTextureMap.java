@@ -1,4 +1,4 @@
-package de.pilz.sammelsorium.mixins;
+package de.pilz.sammelsorium.mixins.early;
 
 import java.util.Map;
 

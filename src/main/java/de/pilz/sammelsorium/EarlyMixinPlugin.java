@@ -16,7 +16,7 @@ public class EarlyMixinPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader {
 
     @Override
     public String getMixinConfig() {
-        return "mixins.pilzmcsammelsorium.json";
+        return "mixins.pilzmcsammelsorium.early.json";
     }
 
     @Override
@@ -24,7 +24,8 @@ public class EarlyMixinPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader {
         List<String> list = new ArrayList<String>();
 
         // Interpolated Textures
-        if (FMLLaunchHandler.side().isClient() && !loadedMods.contains("notfine")) {
+        if (FMLLaunchHandler.side()
+            .isClient() && !loadedMods.contains("notfine")) {
             list.add("MixinTextureMap");
         }
 

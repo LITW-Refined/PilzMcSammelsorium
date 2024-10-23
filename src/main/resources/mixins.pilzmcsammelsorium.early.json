@@ -1,0 +1,8 @@
+{
+  "required": true,
+  "minVersion": "0.7.11",
+  "package": "de.pilz.sammelsorium.mixins.early",
+  "refmap": "mixins.pilzmcsammelsorium.refmap.json",
+  "target": "@env(DEFAULT)",
+  "compatibilityLevel": "JAVA_8"
+}

@@ -1,4 +1,4 @@
-package de.pilz.sammelsorium.mixins;
+package de.pilz.sammelsorium.mixins.late;
 
 import java.util.Locale;
 

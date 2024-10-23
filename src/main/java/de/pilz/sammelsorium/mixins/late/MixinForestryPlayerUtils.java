@@ -1,4 +1,4 @@
-package de.pilz.sammelsorium.mixins;
+package de.pilz.sammelsorium.mixins.late;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
