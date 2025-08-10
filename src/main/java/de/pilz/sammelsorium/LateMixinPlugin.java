@@ -30,6 +30,10 @@ public class LateMixinPlugin implements ILateMixinLoader {
             list.add("MixinBlockLantern");
         }
 
+        if (loadedMods.contains("ExtrabiomesXL")) {
+            list.add("MixinBlockWaterPlant");
+        }
+
         return list;
     }
 }
